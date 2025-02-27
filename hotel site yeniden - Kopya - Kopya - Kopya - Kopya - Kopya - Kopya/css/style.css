@@ -126,7 +126,7 @@ body{
   margin-right: 1rem;
 }
 span{
-  color: var(--danger);
+  color: var(--primary);
   text-shadow: 4px 4px 8px  rgba(0, 0, 0, 5);
 }
 .navbar ul {
