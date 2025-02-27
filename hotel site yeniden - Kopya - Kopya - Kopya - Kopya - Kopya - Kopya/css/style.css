@@ -1,0 +1,323 @@
+/* General Settings */
+
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+  scroll-behavior: smooth;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+li{
+    list-style-type: none;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+a{
+    text-decoration: none;
+    color: var(--white);
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+body{
+  font-family: "Inconsolata", serif;
+}
+/* Header */
+.head-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  width: 100%;
+  color: var(--white);
+  padding: 2rem;
+}
+.main-header{
+  background: url(../images/bg1.jpg);
+  width: 100%;
+  height: 100svh;
+  background-repeat: no-repeat;
+  background-size:cover;
+  background-position: center;
+}
+.main-header.blogs{
+  background: url(../images/bg2.jpg);
+  width: 100%;
+  height: 50svh;
+  background-size:cover;
+  background-position: center;
+}
+.main-header.blogs::before{
+  min-height: 50svh;
+}
+.main-header::before{
+  content: "";
+  position: absolute;
+  background:black;
+  width: 100%;
+  min-height: 100svh;
+  top: 0;
+  left: 0;
+  opacity: 0.5;
+}
+.nav-text{
+  font-size: 2rem;
+}
+.nav-text i{
+  margin-right: 1rem;
+}
+span{
+  color: var(--danger);
+  text-shadow: 4px 4px 8px  rgba(0, 0, 0, 5);
+}
+.navbar ul {
+  display: flex;
+  
+}
+.navbar ul li a{
+  padding: 1rem 2rem;
+}
+.navbar ul li a:hover{
+  border-bottom: 2px solid var(--danger);
+}
+.content{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  transform: translate(-50%,-50%);
+  color: var(--white);
+}
+.content.blogs{
+  top: 25%;
+}
+.content h1, .content.blogs{
+  font-size: 4rem;
+}
+.content p{
+  margin: 1rem 0;
+  font-size: 2rem;
+}
+/* Section */
+/* Services */
+.items i{
+  padding: 1rem;
+  background-color: var(--danger);
+  border-radius: 50%;
+  color: var(--white);
+}
+.items h3{
+  margin: 1rem 0;
+  font-size: 1.5rem;
+}
+/* About */
+.column{
+  flex: 1;
+}
+.rooms{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  color: var(--white);
+  padding: 4rem;
+}
+.rooms h3{
+  font-size: 2.3rem;
+}
+.rooms p{
+  margin: 2rem 0;
+}
+.column .image img{
+  width: 100%;
+  height: 35rem;
+  object-fit: cover;
+  transition: all 0.3s ease;
+}
+.column .image img:hover{
+  transform: scale(1.03);
+}
+/* Gallery */
+.gallery-container{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  padding: 0 2rem;
+}
+.gallery-container .column{
+  width: 100%;
+  height: 100%;
+  padding: 0.5rem;
+}
+.gallery-container .column img{
+  height: 250px;
+  width: 100%;
+  object-fit: cover;
+  margin: 1rem 0;
+  box-shadow: -4px 8px 8px rgba(0, 0, 0, 0.5);
+  transition: all 0.4s ease;
+}
+.gallery-container .column img:hover{
+  transform: scale(1.03);
+}
+/* Rooms */
+.card{
+  width: 100%;
+  padding: 3rem;
+  
+}
+.card img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-top-left-radius: 5rem;
+  border-top-right-radius: 5rem;
+}
+.card-body{
+  background-color: var(--danger);
+  color: var(--white);
+  border-bottom-right-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+}
+.card-body h5{
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+/* Rooms */
+.management{
+  padding: 0 2rem;
+}
+.management img{
+  border-radius: 1rem;
+}
+.management h5{
+  font-size: 2rem;
+  margin: 1rem 0;
+}
+/* Contact */
+.contact{
+  color: var(--white);
+}
+.contact h5{
+  font-size: 3rem;
+}
+.form-contact{
+  width: 100%;
+  font-size: 1.2rem;
+}
+label{
+  display: block;
+  margin: 0.5rem 0;
+}
+.form-control{
+  margin: 2rem 0;
+}
+input{
+  width: 100%;
+  border: none;
+  padding: 0.5rem 0.2rem;
+}
+/* Footer */
+.footer{
+  text-align: center;
+  background-color: var(--success);
+  padding: 4rem 0;
+  color: var(--white);
+}
+.footer p{
+  margin: 1rem 0;
+}
+.footer .social a{
+  margin: 0 0.5rem;
+}
+.footer .social a:hover{
+  color: var(--danger);
+}
+#backtotop{
+  font-size: 3rem;
+  color: var(--danger);
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+}
+#backtotop:hover{
+  color: var(--white);
+}
+
+/* Blogs */
+.articles{
+  padding: 3rem;
+}
+.flex-columns.article{
+  margin: 2rem 0;
+  box-shadow: -4px 4px 8px rgba(0, 0, 0, 0.5);
+}
+.flex-columns.article .column:nth-child(even){
+  flex: 3;
+}
+.flex-columns.article .column:nth-child(odd){
+  flex: 2;
+}
+.footer.blogs{
+  background-color: var(--warning);
+}
