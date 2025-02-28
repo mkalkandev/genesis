@@ -112,7 +112,7 @@ body{
 .main-header::before{
   content: "";
   position: absolute;
-  background:gray;
+  background:red;
   width: 100%;
   min-height: 100svh;
   top: 0;
